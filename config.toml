@@ -1,0 +1,14 @@
+# Public channels to watch (usernames without @).
+channels = ["dnipromonitor", "ny_i_dnipro", "dnipro_alerts"]
+
+# Case-insensitive, matched at the START of a word, so endings don't matter:
+# "Набережн" hits "Набережна/Набережній", "Перемоз" covers "на Перемозі".
+keywords = ["Перемог", "Перемоз", "Набережн", "Придні", "Кодак", "авік", "аеропорт"]
+
+# Case-sensitive, WHOLE word only. Use for short abbreviations that would
+# otherwise hit inside ordinary words ("ТЕС" vs "тест", "інтерес").
+exact_words = ["ТЕС"]
+
+# After a critical (sound-on-mute) alert for a keyword, further mentions of it
+# within this window arrive as normal notifications instead of another alarm.
+cooldown_seconds = 180
