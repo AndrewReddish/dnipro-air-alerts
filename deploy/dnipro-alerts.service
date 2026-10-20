@@ -1,3 +1,4 @@
+# Template: install.sh replaces the user and directory placeholders below.
 [Unit]
 Description=Dnipro air alert monitor (Telegram -> Bark)
 After=network-online.target
@@ -5,10 +6,10 @@ Wants=network-online.target
 
 [Service]
 Type=simple
-User=ubuntu
-WorkingDirectory=/home/ubuntu/dnipro-air-alerts
-EnvironmentFile=/home/ubuntu/dnipro-air-alerts/.env
-ExecStart=/home/ubuntu/dnipro-air-alerts/.venv/bin/python monitor.py
+User=__USER__
+WorkingDirectory=__DIR__
+EnvironmentFile=__DIR__/.env
+ExecStart=__DIR__/.venv/bin/python monitor.py
 Restart=always
 RestartSec=10
 
